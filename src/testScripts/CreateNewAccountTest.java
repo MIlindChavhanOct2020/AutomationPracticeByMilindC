@@ -14,11 +14,11 @@ import pojo.CreateAccountDataPojo;
 
 public class CreateNewAccountTest extends TestBase{
 	
-	@Test
+	@Test(priority=1)
 	void createAccountTest() {
 		HomePage homePage = new HomePage();
 		AuthenticationPage authenticationPage = homePage.clickOnSignIn();
-		authenticationPage.enterEmailAddress("abc005@gmail.com");
+		authenticationPage.enterEmailAddress("abc008@gmail.com");
 		CreateAnAccountPage createAnAccountPage =  authenticationPage.clickOnCreateAnAccount();
 		
 		CreateAccountDataPojo createAccountDataPojo = new CreateAccountDataPojo();
@@ -51,7 +51,7 @@ public class CreateNewAccountTest extends TestBase{
 	public void validationForErrorMessages() {
 		HomePage homePage = new HomePage();
 		AuthenticationPage authenticationPage = homePage.clickOnSignIn();
-		authenticationPage.enterEmailAddress("abc006@gmail.com");
+		authenticationPage.enterEmailAddress("abc007@gmail.com");
 		CreateAnAccountPage createAnAccountPage =  authenticationPage.clickOnCreateAnAccount();
 		
 		CreateAccountDataPojo createAccountDataPojo = new CreateAccountDataPojo();
