@@ -18,7 +18,14 @@ public class CreateAccountDataPojo {
 	private String homeNumber;
 	private String mobileNumber;
 	private String aliasAddress;
+	private String email;
 	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public boolean isMale() {
 		return isMale;
 	}
