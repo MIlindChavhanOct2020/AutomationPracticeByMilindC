@@ -35,6 +35,7 @@ public class ExcelOperation {
 				System.out.println(data[rowIndex-1][colIndex-1]);
 			}
 		}
+		wb.close();
 		return data;
 	}
 }
