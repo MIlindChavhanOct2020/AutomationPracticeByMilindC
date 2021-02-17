@@ -20,5 +20,30 @@ public class AuthenticationPage extends PredefinedActions{
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='SubmitCreate']"))).click();
 		return new CreateAnAccountPage();
 	}
+	
+	public MyProfilePage doLogin(String email, String password) {
+		enterLoginEmailAddress(email);
+		enterLoginPassword(password);
+		clickOnLoginSignIn();
+		return new MyProfilePage();
+	}
+	
+	public void enterLoginEmailAddress(String emailAddress) {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		System.out.println("STEP : Enter email Address for login");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#email"))).sendKeys(emailAddress);
+	}
+	
+	public void enterLoginPassword(String password) {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		System.out.println("STEP : Enter password for login");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#passwd"))).sendKeys(password);
+	}
+	
+	public void clickOnLoginSignIn() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		System.out.println("STEP : Click on sign in button for login");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='SubmitLogin']"))).click();
+	}
 
 }
